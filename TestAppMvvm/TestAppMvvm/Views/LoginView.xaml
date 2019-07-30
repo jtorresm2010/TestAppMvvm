@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             x:Class="TestAppMvvm.Views.LoginView"
+             NavigationPage.HasNavigationBar="false">
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label">
+                <Setter Property="HorizontalTextAlignment" Value="Start" />
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout 
+        BindingContext="{Binding Login}"
+        Margin="20">
+        <Label Text="Usuario"/>
+        <Entry Placeholder="Ingrese nombre de Usuario"
+               Text="{Binding NOMBRE_USUARIO}"/>
+        <Label Text="Contraseña"/>
+        <Entry Placeholder="Ingrese Contraseña"
+               Text="{Binding CLAVE}"/>
+        <Button Text="Ingresar"
+                Command="{Binding LoginCommand}"/>
+        
+    </StackLayout>
+</ContentPage>

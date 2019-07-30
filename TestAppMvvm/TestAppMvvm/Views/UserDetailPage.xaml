@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             Title="Datos de usuario"
+             x:Class="TestAppMvvm.Views.UserDetailPage">
+    
+    <StackLayout 
+                BindingContext="{Binding MainView}"
+                Padding="5, 25">
+        <Label 
+                Text="{Binding Usuario.NOMBRE_USUARIO}"
+                Font="Bold,Large"
+                HorizontalOptions="Center" />
+        <Image
+                Source="{Binding ImageSource}"
+                WidthRequest="300" 
+                HeightRequest="300" >
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ChangeImageCommand}"/>
+                </Image.GestureRecognizers>
+        </Image>
+        <Button Text="Ingresar"
+            Command="{Binding LoginCommand}"/>
+
+    </StackLayout>
+
+</ContentPage>
