@@ -8,8 +8,8 @@
              x:Class="TestAppMvvm.Views.UserDetailPage">
     
     <StackLayout 
-                BindingContext="{Binding MainView}"
                 Padding="5, 25">
+                <!--BindingContext="{Binding MainView}"-->
         <Label 
                 Text="{Binding Usuario.NOMBRE_USUARIO}"
                 Font="Bold,Large"

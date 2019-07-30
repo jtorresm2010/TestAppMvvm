@@ -8,8 +8,8 @@
              x:Class="TestAppMvvm.Views.UserListPage">
     
     <StackLayout 
-             BindingContext="{Binding MainView}"
              Margin="20">
+             <!--indingContext="{Binding MainView}"-->
         <ListView
                 IsRefreshing="{Binding IsRefreshing}"
                 IsPullToRefreshEnabled="True"
