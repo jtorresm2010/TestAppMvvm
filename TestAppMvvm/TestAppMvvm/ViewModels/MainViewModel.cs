@@ -24,18 +24,16 @@ namespace TestAppMvvm.ViewModels
 
         private MediaFile file;
 
-        public string NOMBRE_USUARIO { get; set; }
-        public string imagen { get; set; }
+        public bool isRefreshing;
+
+        public ObservableCollection<UsuarioItemViewModel> usuarios;
+
+
         public Usuario Usuario
         {
             get { return this.usuario; }
             set { this.SetValue(ref this.usuario, value); }
         }
-
-
-        public ObservableCollection<UsuarioItemViewModel> usuarios;
-
-        public bool isRefreshing;
 
         public bool IsRefreshing
         {
@@ -58,17 +56,11 @@ namespace TestAppMvvm.ViewModels
         }
 
         public LoginViewModel Login { get; set; }
-        public MainViewViewModel MainView { get; set; }
-
-        public void NewMainView()
-        {
-            this.MainView = new MainViewViewModel();
-        }
 
         public MainViewModel()
         {
 
-
+            #region iniciar bdd
             initializeDB("test", "test");
             initializeDB("test5", "test5");
             initializeDB("test33", "test");
@@ -85,6 +77,7 @@ namespace TestAppMvvm.ViewModels
             initializeDB("test6", "test");
             initializeDB("test7", "test");
             initializeDB("test8", "test");
+            #endregion
 
             LoadUsers();
 
@@ -93,7 +86,6 @@ namespace TestAppMvvm.ViewModels
             this.Login = new LoginViewModel();
 
         }
-
 
         private async void initializeDB(String usuario, String pass)/* Guarda un nuevo usuario de prueba, solo si no se repite el nombre */
         {
@@ -123,11 +115,29 @@ namespace TestAppMvvm.ViewModels
 
         #endregion sing
 
+        public ICommand RefreshCommand
+        {
+            get
+            {
+                return new RelayCommand(LoadUsers);
+            }
+        }
+
+        public ICommand ChangeImageCommand
+        {
+
+            get
+            {
+                return new RelayCommand(ChangeImage);
+            }
+
+        }
+
         public void SetImageSource(String source)
         {
 
 
-            if (source == null)
+            if (string.IsNullOrEmpty(source))
             {
                 imageSource = ImageSource.FromResource("TestAppMvvm.Images.userPlaceholder.png", typeof(LoginView).GetTypeInfo().Assembly);
             }
@@ -159,23 +169,6 @@ namespace TestAppMvvm.ViewModels
             this.Usuarios = new ObservableCollection<UsuarioItemViewModel>(Mylist);
 
             this.IsRefreshing = false;
-        }
-
-        public ICommand RefreshCommand
-        {
-            get
-            {
-                return new RelayCommand(LoadUsers);
-            }
-        }
-        public ICommand ChangeImageCommand
-        {
-
-            get
-            {
-                return new RelayCommand(ChangeImage);
-            }
-
         }
 
         private async void ChangeImage()

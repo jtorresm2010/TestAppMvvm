@@ -24,6 +24,9 @@ namespace TestAppMvvm
                 return database;
             }
         }
+
+        public static NavigationPage Navigator { get; internal set; }
+
         public App()
         {
             InitializeComponent();
@@ -31,7 +34,7 @@ namespace TestAppMvvm
             MainPage = new LoginView();
 
             
-        }
+        } 
 
         protected override void OnStart()
         {

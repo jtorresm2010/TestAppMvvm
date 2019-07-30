@@ -60,17 +60,12 @@
                 {
                     
                     var viewModel = MainViewModel.GetInstance(); // Instancia actual del MainViewModel
-                    //viewModel.MainView = new MainViewViewModel();// Se crea un nuevo MainViewViewModel en la instancia actual
-
-                    //var mainView = MainViewViewModel.GetInstance(); //Instancia actual de MainViewViewModel
-                    viewModel.Usuario = usuarioGuardado;// Con la instancia MainView inicializada, se setea el valor Usuario
+                    
+                    viewModel.Usuario = usuarioGuardado;// Con la instancia MainView inicializada, se setea el valor Usuario con el objeto obtenido de la base de datos
 
                     viewModel.SetImageSource(usuarioGuardado.IMAGEN);
 
-
                     Application.Current.MainPage = new NavigationPage(new MasterPage()); //Nuevo NavigationPage
-                    //Application.Current.MainPage = new NavigationPage(new MainView()); //Nuevo NavigationPage
-
 
                 }
                 else
