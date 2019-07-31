@@ -61,11 +61,11 @@
                     
                     var viewModel = MainViewModel.GetInstance(); // Instancia actual del MainViewModel
                     
-                    viewModel.Usuario = usuarioGuardado;// Con la instancia MainView inicializada, se setea el valor Usuario con el objeto obtenido de la base de datos
+                    viewModel.Usuario = usuarioGuardado;// Con la instancia MainView inicializada, se setea el valor Usuario con el 
 
                     viewModel.SetImageSource(usuarioGuardado.IMAGEN);
-
-                    Application.Current.MainPage = new NavigationPage(new MasterPage()); //Nuevo NavigationPage
+                    Application.Current.MainPage = new MasterMenuPage();
+                    //Application.Current.MainPage = new NavigationPage(new MasterPage()); //Nuevo NavigationPage
 
                 }
                 else

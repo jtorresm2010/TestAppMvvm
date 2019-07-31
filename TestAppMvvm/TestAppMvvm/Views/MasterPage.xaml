@@ -5,10 +5,11 @@
             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
             xmlns:pages="clr-namespace:TestAppMvvm.Views"
             mc:Ignorable="d"
-            NavigationPage.HasNavigationBar="false"
             BindingContext="{Binding Main, Source={StaticResource Locator}}"
             x:Class="TestAppMvvm.Views.MasterPage"
+             Title="Multi page "
             >
+            <!--NavigationPage.HasNavigationBar="false"-->
 
     <TabbedPage.Children>
         <pages:UserDetailPage/>

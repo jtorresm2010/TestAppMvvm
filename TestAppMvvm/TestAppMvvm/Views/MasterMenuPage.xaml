@@ -5,7 +5,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              xmlns:pages="clr-namespace:TestAppMvvm.Views"
-             x:Class="TestAppMvvm.Views.MasterMenuPage">
+             x:Class="TestAppMvvm.Views.MasterMenuPage"
+                  Title="Multi page ">
 
     <MasterDetailPage.Master>
         <pages:MenuPage/>
