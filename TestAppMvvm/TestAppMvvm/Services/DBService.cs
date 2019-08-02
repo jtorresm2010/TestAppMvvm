@@ -29,7 +29,7 @@ namespace TestAppMvvm.Services
             return _database.Table<Usuario>()
                             .Where(i => i.NOMBRE_USUARIO == usr).CountAsync().Result;
         }
-
+       
         public Task<Usuario> GetUserAsync(String usr)
         {
             return _database.Table<Usuario>()

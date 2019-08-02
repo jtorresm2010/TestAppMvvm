@@ -14,7 +14,7 @@
     <TabbedPage.Children>
         <pages:UserDetailPage/>
         <pages:UserListPage/>
-        <pages:UserAddPage/>
+        <pages:UserAddPage Title="Tab4" IsVisible="false"/>
     </TabbedPage.Children>
 
 </TabbedPage>
