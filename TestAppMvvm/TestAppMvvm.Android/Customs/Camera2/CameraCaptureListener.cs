@@ -28,6 +28,7 @@ namespace TestAppMvvm.Droid.Customs.Camera2
         {
             switch (owner.mState)
             {
+
                 case CameraDroid.STATE_WAITING_LOCK:
                     {
                         Integer afState = (Integer)result.Get(CaptureResult.ControlAfState);

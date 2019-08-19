@@ -26,6 +26,8 @@ namespace TestAppMvvm.Droid
 		
 		public static void UpdateIdValues()
 		{
+			global::PCLStorage.Resource.String.ApplicationName = global::TestAppMvvm.Droid.Resource.String.ApplicationName;
+			global::PCLStorage.Resource.String.Hello = global::TestAppMvvm.Droid.Resource.String.Hello;
 			global::Xamarin.Essentials.Resource.Attribute.alpha = global::TestAppMvvm.Droid.Resource.Attribute.alpha;
 			global::Xamarin.Essentials.Resource.Attribute.coordinatorLayoutStyle = global::TestAppMvvm.Droid.Resource.Attribute.coordinatorLayoutStyle;
 			global::Xamarin.Essentials.Resource.Attribute.font = global::TestAppMvvm.Droid.Resource.Attribute.font;
@@ -7700,6 +7702,12 @@ namespace TestAppMvvm.Droid
 		
 		public partial class String
 		{
+			
+			// aapt resource value: 0x7f090050
+			public const int ApplicationName = 2131296336;
+			
+			// aapt resource value: 0x7f09004f
+			public const int Hello = 2131296335;
 			
 			// aapt resource value: 0x7f090019
 			public const int abc_action_bar_home_description = 2131296281;

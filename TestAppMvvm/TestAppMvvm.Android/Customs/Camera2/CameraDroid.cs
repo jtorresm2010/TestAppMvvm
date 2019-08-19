@@ -174,6 +174,7 @@ namespace TestAppMvvm.Droid.Customs.Camera2
                 _flashSupported = (bool)available;
             }
 
+
             _imageReader.SetOnImageAvailableListener(readerListener, _backgroundHandler);
 
             _previewSize = GetOptimalSize(map.GetOutputSizes(Class.FromType(typeof(SurfaceTexture))), width, height);

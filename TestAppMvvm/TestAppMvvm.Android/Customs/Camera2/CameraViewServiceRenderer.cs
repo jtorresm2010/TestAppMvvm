@@ -1,9 +1,11 @@
 ﻿using Android.Content;
 using Android.Graphics;
+using PCLStorage;
 using System;
 using System.IO;
 using TestAppMvvm.Customs;
 using TestAppMvvm.Droid.Customs.Camera2;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
@@ -47,12 +49,26 @@ namespace TestAppMvvm.Droid.Customs.Camera2
         {
             //Here you have the image byte data to do whatever you want 
 
+            var appPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+            var path = Android.OS.Environment.GetExternalStoragePublicDirectory(Android.OS.Environment.DirectoryPictures);
+
+            var combinedPath = System.IO.Path.Combine(appPath, path.AbsolutePath);
+
+            File.WriteAllBytes(path + "/Clicar/test002.Jpeg", imgSource);
+
 
             Device.BeginInvokeOnMainThread(() =>
             {
                 _currentElement?.PictureTaken();
             });
         }
+
+
+
+
+
+
+
 
         protected override void Dispose(bool disposing)
         {
