@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<StackLayout xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:pages="clr-namespace:TestAppMvvm.Views"
+             mc:Ignorable="d"
+             x:Class="TestAppMvvm.Views.ItemElementTestView">
+
+    <StackLayout
+        Spacing="20"
+        Padding="0,15">
+
+        <Label Text="{Binding RandomProperty1}"/>
+
+
+        <ListView 
+            x:Name="listView" 
+            Margin="0,20,0,0" 
+            ItemTemplate="{StaticResource personDataTemplateSelector}" />
+
+
+
+        <!--<ListView
+            x:Name="ElemList">
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Label Text="{Binding RandomProperty1}"/>
+
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+        </ListView>-->
+
+
+    </StackLayout>
+
+</StackLayout>

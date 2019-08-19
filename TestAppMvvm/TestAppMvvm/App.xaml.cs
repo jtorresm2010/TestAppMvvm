@@ -30,8 +30,9 @@ namespace TestAppMvvm
         public App()
         {
             InitializeComponent();
-
-            MainPage = new LoginView();
+            //MainPage = new AccordionRepeaterView();
+            MainPage = new NavigationPage(new CamOverlayTestView());
+            //MainPage = new LoginView();
 
             
         } 

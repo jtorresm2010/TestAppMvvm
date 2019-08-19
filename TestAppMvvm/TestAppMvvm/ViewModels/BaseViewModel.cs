@@ -11,6 +11,7 @@ namespace TestAppMvvm.ViewModels
     public class BaseViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
+        public bool IsBusy { get; set; }
 
         protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
