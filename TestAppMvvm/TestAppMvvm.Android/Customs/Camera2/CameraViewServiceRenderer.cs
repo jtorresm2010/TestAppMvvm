@@ -47,12 +47,11 @@ namespace TestAppMvvm.Droid.Customs.Camera2
 
         private void OnPhoto(object sender, byte[] imgSource)
         {
-            //Here you have the image byte data to do whatever you want 
 
-            var appPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+            
             var path = Android.OS.Environment.GetExternalStoragePublicDirectory(Android.OS.Environment.DirectoryPictures);
 
-            var combinedPath = System.IO.Path.Combine(appPath, path.AbsolutePath);
+            
 
             File.WriteAllBytes(path + "/Clicar/test002.Jpeg", imgSource);
 
