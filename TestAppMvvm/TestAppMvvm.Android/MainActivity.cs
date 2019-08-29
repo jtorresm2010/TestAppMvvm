@@ -39,7 +39,7 @@ namespace TestAppMvvm.Droid
 
 
 
-
+            CrossCurrentActivity.Current.Activity = this;
 
 
 

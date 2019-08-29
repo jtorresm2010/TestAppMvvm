@@ -19,23 +19,6 @@
             Margin="0,20,0,0" 
             ItemTemplate="{StaticResource personDataTemplateSelector}" />
 
-
-
-        <!--<ListView
-            x:Name="ElemList">
-
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <Label Text="{Binding RandomProperty1}"/>
-
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-
-        </ListView>-->
-
-
     </StackLayout>
 
 </StackLayout>
